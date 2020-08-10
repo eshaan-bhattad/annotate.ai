@@ -24,14 +24,42 @@
   color: white;
 }
 
+.card {
+  list-style-type: none;
+  padding: 0;
+  margin: 2rem;
+  width: 18rem;
+  align-items: center;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.table {
+  margin: 1rem;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.img {
+  height: 300px;
+}
+
+.form-group {
+  align-items: left;
+  display: flex;
+  justify-content: center;
+  top: 50%
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
