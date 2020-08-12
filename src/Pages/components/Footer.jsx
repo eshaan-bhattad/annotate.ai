@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     return (
       <nav class="navbar bottom navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/Home">
           Anno.tate
         </a>
       </nav>

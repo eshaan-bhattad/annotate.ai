@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Link, NavLink } from "react-router-dom";
 
 class Header extends Component {
   render() {
     return (
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/Home">
             <b>Anno.tate</b>
           </a>
           <button
@@ -22,34 +21,26 @@ class Header extends Component {
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <Link to="/">
-                <li class="nav-item active">
-                  <a class="nav-link" href="">
-                    Home <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-              </Link>
-              <Link to="/Assignments">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    Assignments
-                  </a>
-                </li>
-              </Link>
-              <Link to="/Courses">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    Courses
-                  </a>
-                </li>
-              </Link>
-              <Link to="/Profile">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    Profile
-                  </a>
-                </li>
-              </Link>
+              <li class="nav-item active">
+                <a class="nav-link" href="/Home">
+                  Home <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Assignments">
+                  Assignments
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Courses">
+                  Courses
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Profile">
+                  Profile
+                </a>
+              </li>
             </ul>
           </div>
         </nav>

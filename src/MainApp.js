@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./Pages/components/Header";
 import Home from "./Pages/Home";
@@ -8,18 +7,22 @@ import Assignments from "./Pages/Assignments";
 import Courses from "./Pages/Courses";
 import Profile from "./Pages/Profile";
 import Login from "./Pages/Login";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ePubPage from "./Pages/ePubPage";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import SignUp from "./Pages/SignUp";
 function MainApp() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header></Header>
         <Route path="/" exact component={Login} />
         <Route path="/home" exact component={Home} />
         <Route path="/Assignments" exact component={Assignments} />
         <Route path="/Courses" exact component={Courses} />
         <Route path="/Profile" exact component={Profile} />
-        <Footer />
+        <Route path="/Book" exact component={ePubPage} />
+        <Route path="/signup" exact component={SignUp} />
+        <Footer></Footer>
       </div>
     </Router>
   );

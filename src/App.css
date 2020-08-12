@@ -7,10 +7,25 @@
   pointer-events: none;
 }
 
+.badge {
+  margin: 4rem;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.Link {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-header {
@@ -38,6 +53,7 @@
 
 .table {
   margin: 1rem;
+  justify-content: center;
 }
 
 .App-link {
@@ -48,11 +64,31 @@
   height: 300px;
 }
 
+.col-sm {
+  padding: 2rem;
+}
+
 .form-group {
   align-items: left;
   display: flex;
   justify-content: center;
   top: 50%
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.button {
+  margin: 4rem;
+  align-items: center;
+  padding: 10px;
+}
+
+.form {
+  background-color: white;
 }
 
 @keyframes App-logo-spin {
