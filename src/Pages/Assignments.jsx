@@ -7,8 +7,8 @@ class Assigments extends Component {
       <div>
         <div class="row">
           <div class="col-sm">
-            <table class="table table-hover table-dark">
-              <thead>
+            <table class="table table-hover table-light">
+              <thead class="thead-dark">
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Title</th>
@@ -42,7 +42,7 @@ class Assigments extends Component {
           </div>
           <div class="col-sm">
             <h1>
-              <span class="badge badge-secondary " align-items="center">
+              <span class="badge badge-warning " align-items="center">
                 {" "}
                 3 Remaining Assignments
               </span>

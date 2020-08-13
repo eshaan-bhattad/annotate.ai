@@ -10,6 +10,8 @@ import Login from "./Pages/Login";
 import ePubPage from "./Pages/ePubPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignUp from "./Pages/SignUp";
+import Course from "./Pages/Course";
+import Student from "./Pages/Student";
 function MainApp() {
   return (
     <Router>
@@ -22,6 +24,8 @@ function MainApp() {
         <Route path="/Profile" exact component={Profile} />
         <Route path="/Book" exact component={ePubPage} />
         <Route path="/signup" exact component={SignUp} />
+        <Route path="/course" exact component={Course} />
+        <route path="/Student" exact component={Student} />
         <Footer></Footer>
       </div>
     </Router>
