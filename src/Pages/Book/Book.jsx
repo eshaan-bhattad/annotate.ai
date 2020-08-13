@@ -1,12 +1,55 @@
 import React, { Component } from "react";
+import { createGlobalStyle } from "styled-components";
+import FileReaderInput from "react-file-reader-input";
+import { ReactReader } from "./modules";
 import {
-  ReactReader, // A simple epub-reader with left/right button and chapter navigation
-  ReactReaderStyle,
-  getRendition, // Styles for the epub-reader it you need to customize it
-} from "react-reader";
-import SelectionHighlighter from "react-highlight-selection";
+  Container,
+  ReaderContainer,
+  Bar,
+  LogoWrapper,
+  Logo,
+  GenericButton,
+  CloseIcon,
+  FontSizeButton,
+  ButtonWrapper,
+} from "./Components";
+import "./annotate";
+import epub from "epubjs/lib/epub";
+import { Rendition, Annotation } from "epubjs/lib";
 const storage = global.localStorage || null;
-class ePubPage extends Component {
+
+const DEMO_URL =
+  "https://gerhardsletten.github.io/react-reader/files/alice.epub";
+const DEMO_NAME = "Alice in wonderland";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: 300;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-size: 1.8rem;
+    background: #333;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+  }
+`;
+
+class Book extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -79,23 +122,21 @@ class ePubPage extends Component {
     }
   };
   render() {
+    const { fullscreen, location, localFile, localName } = this.state;
     return (
-      <div style={{ position: "relative", height: "100%" }}>
-        <ReactReader
-          style={ReactReaderStyle}
-          url={"/littleprince.epub"}
-          title={"The Little Prince"}
-          locationChanged={(epubcifi) => console.log(epubcifi)}
-          swipeable={true}
-          getRendition={this.getRendition}
-        />
-        <SelectionHighlighter
-          selectionHandler={this.selectionHandler}
-          customClass="custom-class"
-        />
-      </div>
+      <Container>
+        <GlobalStyle />
+        <ReaderContainer fullscreen={fullscreen}>
+          <ReactReader
+            url={localFile || DEMO_URL}
+            title={localName || DEMO_NAME}
+            location={location}
+            locationChanged={this.onLocationChanged}
+            getRendition={this.getRendition}
+          />
+        </ReaderContainer>
+      </Container>
     );
   }
 }
-
-export default ePubPage;
+export default Book;

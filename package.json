@@ -11,12 +11,15 @@
     "react": "^16.13.1",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.13.1",
+    "react-file-reader-input": "^2.0.0",
     "react-highlight-selection": "^1.0.2",
     "react-reader": "^0.18.5",
     "react-router-dom": "^5.2.0",
     "react-script-tag": "^1.1.2",
     "react-scripts": "3.4.1",
-    "scriptjs": "^2.5.9"
+    "scriptjs": "^2.5.9",
+    "styled-components": "^5.1.1",
+    "styled-components-breakpoint": "^3.0.0-preview.20"
   },
   "scripts": {
     "start": "react-scripts start",

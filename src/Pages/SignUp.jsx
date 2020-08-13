@@ -9,7 +9,7 @@ class SignUp extends Component {
             <div class="card card-signin my-5">
               <div class="card-body">
                 <h5 class="card-title text-center">Sign Up</h5>
-                <form class="form-signin">
+                <form class="form-signup">
                   <div class="form-label-group">
                     <input
                       type="text"
@@ -39,6 +39,7 @@ class SignUp extends Component {
                       class="form-control"
                       placeholder="Password"
                       required
+                      autofocus
                       padding
                     />
                   </div>
