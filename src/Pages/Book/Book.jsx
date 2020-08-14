@@ -2,20 +2,12 @@ import React, { Component } from "react";
 import { createGlobalStyle } from "styled-components";
 import FileReaderInput from "react-file-reader-input";
 import { ReactReader } from "./modules";
-import {
-  Container,
-  ReaderContainer,
-  Bar,
-  LogoWrapper,
-  Logo,
-  GenericButton,
-  CloseIcon,
-  FontSizeButton,
-  ButtonWrapper,
-} from "./Components";
+import { Container, ReaderContainer } from "./Components";
 import "./annotate";
 import epub from "epubjs/lib/epub";
-import { Rendition, Annotation } from "epubjs/lib";
+import Annotation from "/Users/eshaanbhattadf/node_modules/epubjs/src/annotations";
+import { Button, Modal } from "react-bootstrap";
+import $ from "jquery";
 const storage = global.localStorage || null;
 
 const DEMO_URL =
@@ -78,7 +70,6 @@ class Book extends Component {
       }
     );
   };
-
   onLocationChanged = (location) => {
     this.setState(
       {
@@ -121,11 +112,11 @@ class Book extends Component {
       });
     }
   };
+
   render() {
     const { fullscreen, location, localFile, localName } = this.state;
     return (
       <Container>
-        <GlobalStyle />
         <ReaderContainer fullscreen={fullscreen}>
           <ReactReader
             url={localFile || DEMO_URL}
@@ -138,5 +129,54 @@ class Book extends Component {
       </Container>
     );
   }
+
+  Example() {
+    const [show, setShow] = React.useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    return (
+      <>
+        <Button variant="primary" onClick={handleShow}>
+          Launch demo modal
+        </Button>
+
+        <Modal show={show} onHide={handleClose} id="myModel">
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  }
+  onRenditionSelection = (cfiRange) => {
+    console.log("Selection was created", cfiRange);
+    const notes = prompt("Enter in your notes: ");
+    const annotation = {
+      cfi: cfiRange,
+      text: notes,
+    };
+    console.log(annotation);
+  };
+  getRendition = (rendition) => {
+    // Get access to core events from epubjs
+    rendition.on("selected", this.onRenditionSelection);
+    // Add custom styles
+    rendition.themes.default({
+      "::selection": {
+        background: "rgba(255,255,0, 0.3)",
+      },
+    });
+  };
 }
 export default Book;
