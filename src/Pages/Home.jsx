@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import JumbotronMain from "./components/JumbotronMain";
+import { Link } from "react-router-dom";
 export default class Home extends Component {
   state = {};
 
@@ -18,19 +19,19 @@ export default class Home extends Component {
                   <div class="row">
                     <div class="col-8 col-sm-6">
                       <div class="card text-white bg-primary mb-3">
-                        <div class="card-header">Course</div>
+                        <div class="card-header">English</div>
                         <div class="card-body">
-                          <h5 class="card-title">Novel Title</h5>
-                          <p class="card-text">Due Date</p>
+                          <h5 class="card-title">The Little Prince</h5>
+                          <p class="card-text">09/02/2020</p>
                         </div>
                       </div>
                     </div>
                     <div class="col-4 col-sm-6">
                       <div class="card text-white bg-primary mb-3">
-                        <div class="card-header">Course</div>
+                        <div class="card-header">Philosophy</div>
                         <div class="card-body">
-                          <h5 class="card-title">Novel Title</h5>
-                          <p class="card-text">Due Date</p>
+                          <h5 class="card-title">Nichomachean Ethics</h5>
+                          <p class="card-text">08/24/2020</p>
                         </div>
                       </div>
                     </div>
@@ -38,19 +39,19 @@ export default class Home extends Component {
                   <div class="row">
                     <div class="col-8 col-sm-6">
                       <div class="card text-white bg-primary mb-3">
-                        <div class="card-header">Course</div>
+                        <div class="card-header">Theatre</div>
                         <div class="card-body">
-                          <h5 class="card-title">Novel Title</h5>
-                          <p class="card-text">Due Date</p>
+                          <h5 class="card-title">King Lear</h5>
+                          <p class="card-text">09/07/2020</p>
                         </div>
                       </div>
                     </div>
                     <div class="col-4 col-sm-6">
                       <div class="card text-white bg-primary mb-3">
-                        <div class="card-header">Course</div>
+                        <div class="card-header">English</div>
                         <div class="card-body">
-                          <h5 class="card-title">Novel Title</h5>
-                          <p class="card-text">Due Date</p>
+                          <h5 class="card-title">The Count of Monte Cristo</h5>
+                          <p class="card-text">10/13/2020</p>
                         </div>
                       </div>
                     </div>
@@ -63,19 +64,23 @@ export default class Home extends Component {
                   <div class="row">
                     <div class="col-8 col-sm-6">
                       <div class="card text-white bg-danger mb-3">
-                        <div class="card-header">Course</div>
+                        <div class="card-header">Philosophy</div>
                         <div class="card-body">
-                          <h5 class="card-title">Novel Title</h5>
-                          <p class="card-text">Due Date</p>
+                          <h5 class="card-title">Nichomachean Ethics</h5>
+                          <p class="card-text">08/24/2020</p>
                         </div>
                       </div>
                     </div>
                     <div class="col-4 col-sm-6">
                       <div class="card text-white bg-danger mb-3">
-                        <div class="card-header">Course</div>
+                        <div class="card-header">English</div>
                         <div class="card-body">
-                          <h5 class="card-title">Novel Title</h5>
-                          <p class="card-text">Due Date</p>
+                          <Link to="/Book">
+                            <h5 class="card-title text-white">
+                              The Little Prince
+                            </h5>
+                          </Link>
+                          <p class="card-text">09/02/2020</p>
                         </div>
                       </div>
                     </div>
@@ -83,19 +88,19 @@ export default class Home extends Component {
                   <div class="row">
                     <div class="col-8 col-sm-6">
                       <div class="card text-white bg-danger mb-3">
-                        <div class="card-header">Course</div>
+                        <div class="card-header">Theatre</div>
                         <div class="card-body">
-                          <h5 class="card-title">Novel Title</h5>
-                          <p class="card-text">Dude Date</p>
+                          <h5 class="card-title">King Lear</h5>
+                          <p class="card-text">09/07/2020</p>
                         </div>
                       </div>
                     </div>
                     <div class="col-4 col-sm-6">
                       <div class="card text-white bg-danger mb-3">
-                        <div class="card-header">Course</div>
+                        <div class="card-header">English</div>
                         <div class="card-body">
-                          <h5 class="card-title">Novel Title</h5>
-                          <p class="card-text">Due Date</p>
+                          <h5 class="card-title">The Count of Monte Cristo</h5>
+                          <p class="card-text">10/13/2020</p>
                         </div>
                       </div>
                     </div>

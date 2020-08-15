@@ -45,10 +45,10 @@ class Login extends Component {
                     </label>
                   </div>
                   <button
-                    class="btn btn-lg btn-primary btn-block text-uppercase"
+                    class="btn btn-lg btn-dark btn-block text-uppercase"
                     type="submit"
                   >
-                    Sign in
+                    <Link to="/Home">Sign in</Link>
                   </button>
                   <hr class="my-4" />
                   <Link to="/signup">

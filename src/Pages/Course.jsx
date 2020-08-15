@@ -22,21 +22,21 @@ class Course extends Component {
                 <tr>
                   <th scope="row">1</th>
                   <Link to="/Book">
-                    <td>The Great Gatbsy</td>
+                    <td>Civil War</td>
                   </Link>
-                  <td>English</td>
+                  <td>History</td>
                   <td>09/02/2020</td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>King Lear</td>
-                  <td>Theatre</td>
+                  <td>Globalization</td>
+                  <td>History</td>
                   <td>09/07/2020</td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td>Nichomachean Ethics</td>
-                  <td>Philosophy</td>
+                  <td>The Great Thinkers of the East</td>
+                  <td>History</td>
                   <td>08/24/2020</td>
                 </tr>
               </tbody>

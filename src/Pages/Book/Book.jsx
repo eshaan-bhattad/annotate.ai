@@ -1,45 +1,14 @@
 import React, { Component } from "react";
-import { createGlobalStyle } from "styled-components";
-import FileReaderInput from "react-file-reader-input";
 import { ReactReader } from "./modules";
 import { Container, ReaderContainer } from "./Components";
 import "./annotate";
-import epub from "epubjs/lib/epub";
-import Annotation from "/Users/eshaanbhattadf/node_modules/epubjs/src/annotations";
 import { Button, Modal } from "react-bootstrap";
-import $ from "jquery";
+import DataTable from "./DataTable";
+
 const storage = global.localStorage || null;
-
-const DEMO_URL =
-  "https://gerhardsletten.github.io/react-reader/files/alice.epub";
-const DEMO_NAME = "Alice in wonderland";
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    margin: 0;
-    padding: 0;
-    color: inherit;
-    font-size: inherit;
-    font-weight: 300;
-    line-height: 1.4;
-    word-break: break-word;
-  }
-  html {
-    font-size: 62.5%;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    font-size: 1.8rem;
-    background: #333;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    color: #fff;
-  }
-`;
+const heading = ["Text", "Note"];
+const DEMO_URL = "/littleprince.epub";
+const DEMO_NAME = "The Little Prince";
 
 class Book extends Component {
   constructor(props) {
@@ -53,10 +22,11 @@ class Book extends Component {
       localFile: null,
       localName: null,
       largeText: false,
+      annotations: [{ item: "Address", thing: "Add your notes" }],
     };
     this.rendition = null;
   }
-
+  addAnnotation() {}
   toggleFullscreen = () => {
     this.setState(
       {
@@ -116,17 +86,22 @@ class Book extends Component {
   render() {
     const { fullscreen, location, localFile, localName } = this.state;
     return (
-      <Container>
-        <ReaderContainer fullscreen={fullscreen}>
-          <ReactReader
-            url={localFile || DEMO_URL}
-            title={localName || DEMO_NAME}
-            location={location}
-            locationChanged={this.onLocationChanged}
-            getRendition={this.getRendition}
-          />
-        </ReaderContainer>
-      </Container>
+      <div>
+        <Container>
+          <ReaderContainer fullscreen={fullscreen}>
+            <ReactReader
+              url={localFile || DEMO_URL}
+              title={localName || DEMO_NAME}
+              location={location}
+              locationChanged={this.onLocationChanged}
+              getRendition={this.getRendition}
+            />
+          </ReaderContainer>
+        </Container>
+        <li>
+          <ul></ul>
+        </li>
+      </div>
     );
   }
 
@@ -166,7 +141,8 @@ class Book extends Component {
       cfi: cfiRange,
       text: notes,
     };
-    console.log(annotation);
+    this.state.annotations.push(annotation);
+    console.log(this.state.annotations);
   };
   getRendition = (rendition) => {
     // Get access to core events from epubjs
@@ -179,4 +155,5 @@ class Book extends Component {
     });
   };
 }
+
 export default Book;

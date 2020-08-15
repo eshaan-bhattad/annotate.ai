@@ -20,7 +20,7 @@ class Assigments extends Component {
                 <tr>
                   <th scope="row">1</th>
                   <Link to="/Book">
-                    <td>The Great Gatbsy</td>
+                    <td>The Little Prince</td>
                   </Link>
                   <td>English</td>
                   <td>09/02/2020</td>
@@ -37,6 +37,12 @@ class Assigments extends Component {
                   <td>Philosophy</td>
                   <td>08/24/2020</td>
                 </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>The Count of Monte Cristo</td>
+                  <td>English</td>
+                  <td>10/13/2020</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -44,7 +50,7 @@ class Assigments extends Component {
             <h1>
               <span class="badge badge-warning " align-items="center">
                 {" "}
-                3 Remaining Assignments
+                4 Remaining Assignments
               </span>
             </h1>
           </div>
